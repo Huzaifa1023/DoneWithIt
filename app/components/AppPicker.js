@@ -10,7 +10,6 @@ import {
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import colors from "../config/colors";
-import defaultStyles from "../config/styles";
 import AppText from "./AppText";
 import Screen from "./Screen";
 import PickerItem from "./PickerItem";
@@ -19,13 +18,16 @@ const AppPicker = ({
   icon,
   placeholder,
   selectedItem,
+  PickerItemComponent = PickerItem,
+  numberOfColumns=1,
   onSelectItem,
+  width
 }) => {
   const [visibleModal, setVisibleModel] = React.useState(false);
   return (
     <>
       <TouchableWithoutFeedback onPress={() => setVisibleModel(true)}>
-        <View style={styles.container}>
+        <View style={[styles.container,{width:width}]}>
           {icon && (
             <MaterialCommunityIcons
               name={icon}
@@ -35,11 +37,11 @@ const AppPicker = ({
             />
           )}
           <AppText style={styles.text}>
-            {selectedItem ? selectedItem.title : placeholder}
+            {selectedItem ? selectedItem.label : placeholder}
           </AppText>
           <MaterialCommunityIcons
             name="chevron-down"
-            color={colors.dark}
+            color={colors.medium}
             size={25}
             style={styles.icon}
           />
@@ -47,16 +49,18 @@ const AppPicker = ({
       </TouchableWithoutFeedback>
       <Modal visible={visibleModal}>
         <Screen>
-          <Button onPress={() => setVisibleModel(false)} title="Close Modal" />
+          <Button onPress={() => setVisibleModel(false)} title="Close" />
           <FlatList
             data={items}
             keyExtractor={(items) => items.value.toString()}
+            numColumns={numberOfColumns}
             renderItem={({ item }) => (
-              <PickerItem
-                label={item.title}
+              <PickerItemComponent
+                item={item}
+                label={item.label}
                 onPress={() => {
-                  setVisibleModel(false);
                   onSelectItem(item);
+                  setVisibleModel(false);
                 }}
               />
             )}
@@ -82,5 +86,7 @@ const styles = StyleSheet.create({
   },
   text: {
     flex: 1,
+    color:colors.medium
   },
 });
+ 

@@ -1,8 +1,8 @@
 import React from "react";
 import { Image, ImageBackground, Platform, StatusBar, StyleSheet, Text, View } from "react-native";
+
 import AppButton from "../components/AppButton";
 
-import colors from "../config/colors";
 export default function WelcomeScreen() {
   return (
     <View style={styles.container}>

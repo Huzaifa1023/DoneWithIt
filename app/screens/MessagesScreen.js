@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { StyleSheet, FlatList } from "react-native";
-import AppCard from "../components/AppCard";
+
 import ListItem from "../components/ListItem";
 import ListItemDeleteAction from "../components/ListItemDeleteAction";
 import ListItemSeprator from "../components/ListItemSeprator";
@@ -15,54 +15,6 @@ const initialMessages = [
   },
   {
     id: 2,
-    image: require("../assets/jacket.jpg"),
-    title: "Jacket",
-    subTitle: "$20",
-  },
-  {
-    id: 3,
-    image: require("../assets/jacket.jpg"),
-    title: "Jacket",
-    subTitle: "$20",
-  },
-  {
-    id: 4,
-    image: require("../assets/jacket.jpg"),
-    title: "Jacket",
-    subTitle: "$20",
-  },
-  {
-    id: 5,
-    image: require("../assets/jacket.jpg"),
-    title: "Jacket",
-    subTitle: "$20",
-  },
-  {
-    id: 6,
-    image: require("../assets/jacket.jpg"),
-    title: "Jacket",
-    subTitle: "$20",
-  },
-  {
-    id: 7,
-    image: require("../assets/jacket.jpg"),
-    title: "Jacket",
-    subTitle: "$20",
-  },
-  {
-    id: 8,
-    image: require("../assets/jacket.jpg"),
-    title: "Jacket",
-    subTitle: "$20",
-  },
-  {
-    id: 9,
-    image: require("../assets/jacket.jpg"),
-    title: "Jacket",
-    subTitle: "$20",
-  },
-  {
-    id: 10,
     image: require("../assets/jacket.jpg"),
     title: "Jacket",
     subTitle: "$20",

@@ -1,12 +1,13 @@
 import React from 'react'
 import { StyleSheet, TouchableHighlight, View } from 'react-native'
+import colors from '../config/colors'
 import AppText from './AppText'
 
-const PickerItem = ({label,onPress}) => {
+const PickerItem = ({item,onPress}) => {
     return (
-        <TouchableHighlight onPress={onPress}>
+        <TouchableHighlight onPress={onPress} underlayColor={colors.light}>
         <View style={styles.conatiner}>
-            <AppText>{label}</AppText>
+            <AppText>{item.label}</AppText>
         </View>
         </TouchableHighlight>
     )

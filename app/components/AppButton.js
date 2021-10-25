@@ -15,7 +15,7 @@ export default AppButton
 const styles = StyleSheet.create({
     btnContainer:{
         borderRadius:50,
-        height:70,
+        height:50,
         width:"100%",
         justifyContent:"center",
         alignItems:"center",
